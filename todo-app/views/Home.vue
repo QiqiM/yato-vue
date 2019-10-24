@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <app-bar title="TODO"  left="bars" right="search" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '../components/HelloWorld.vue'
+import AppBar from '../components/appBar.vue'
 
 export default {
-  name: 'home',
   components: {
-    HelloWorld
+    AppBar
   }
 }
 </script>
