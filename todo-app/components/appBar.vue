@@ -33,7 +33,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .app-bar {
-  background: rgba(18, 144, 218, 0.74);
+  background: rgb(17, 241, 241);
   display: flex;
   align-items: center;
   height: 44px;
