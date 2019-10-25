@@ -3,6 +3,7 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <app-bar title="TODO"  left="bars" right="search" />
     <avatar />
+    <gradient />
   </div>
 </template>
 
@@ -42,6 +43,6 @@ export default {
   width: 100%;
   overflow: hidden;
   color: white;
-  background-color: rgb(17, 241, 241);
+  // background-color: rgb(17, 241, 241);
 }
 </style>
