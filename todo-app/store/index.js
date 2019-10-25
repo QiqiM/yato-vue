@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { tomorrow, today } from '../util'
+import { tomorrow, today } from '../utils/util'
 
 Vue.use(Vuex)
 
