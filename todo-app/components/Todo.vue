@@ -8,7 +8,7 @@
         <i class="fa fa-ellipsis-v"></i>
       </div>
     </div>
-    <div class="todo-body">
+    <div class="todo_body">
       <p class="todo_tips">{{ todo.tasks.length }} Task</p>
       <h3 class="todo_title">{{ todo.name }}</h3>
       <div class="todo_progress">
