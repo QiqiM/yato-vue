@@ -15,26 +15,26 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       today: new Date()
-    };
+    }
   },
   computed: {
-    ...mapState(["selected"]),
-    ...mapGetters(["todayTasks"])
+    ...mapState(['selected']),
+    ...mapGetters(['todayTasks'])
   },
   filters: {
-    dateString(val) {
+    dateString (val) {
       return val
         .toDateString()
         .toUpperCase()
-        .replace(/(\s\d{4})$/, ", $1");
+        .replace(/(\s\d{4})$/, ', $1')
     }
   }
-};
+}
 </script>
 
 <style lang='scss' scoped>

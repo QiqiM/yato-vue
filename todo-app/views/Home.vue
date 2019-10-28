@@ -4,6 +4,7 @@
     <app-bar title="TODO"  left="bars" right="search" />
     <avatar />
     <gradient />
+    <todo-list />
   </div>
 </template>
 
@@ -12,19 +13,18 @@
 // import AppBar from '../components/AppBar.vue'
 // import Avatar from '../components/Avatar.vue'
 const path = require('path')
-const files = require.context('../components/home',false, /\.vue$/)
+const files = require.context('../components/home', false, /\.vue$/)
 
 // ["./AppBar.vue","./Avatar.vue"]
-// console.log("==========:%j",files.keys());  
-
+// console.log("==========:%j",files.keys());
 
 const modules = {}
 files.keys().forEach(key => {
-  let name = path.basename(key,'.vue');
+  let name = path.basename(key, '.vue')
   // console.log("name ",name);  // AppBar | Avatar
-  
+
   modules[name] = files(key).default || files(key)
-});
+})
 
 // 使用require.context()来减少重复导入的工作量
 export default {

@@ -97,14 +97,14 @@ export default new Vuex.Store({
     editing: null
   },
   getters: {
-    currentTodo (state){
+    currentTodo (state) {
       return state.todos[state.currentIndex]
     },
-    todayTasks(state){
+    todayTasks (state) {
       let tasks = []
-      state.todos.forEach(todo=>{
-        todo.tasks.forEach(task=>{
-          if(task.date<= tomorrow && !task.done && task.deleted){
+      state.todos.forEach(todo => {
+        todo.tasks.forEach(task => {
+          if (task.date <= tomorrow && !task.done && task.deleted) {
             tasks.push(task)
           }
         })
@@ -113,6 +113,38 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    selectTodo (state, selected) {
+      state.unselect = null
+      state.selected = selected
+    },
+    unselectTodo (state) {
+      state.unselect = state.selected
+      state.selected = null
+    },
+    nextTodo (state) {
+      if (state.currentIndex < state.todos.length - 1) {
+        state.currentIndex++
+      }
+    },
+    prevTodo (state) {
+      if (state.currentIndex > 0) {
+        state.currentIndex--
+      }
+    },
+    deleteTask (_, { task }) {
+      task.deleted = true
+    },
+    toggleEditing (state) {
+      if (state.editing && state.editing.text) {
+        state.selected.todo.tasks.unshift({
+          title: state.editing.text,
+          date: new Date(),
+          done: false,
+          deleted: false
+        })
+      }
+      state.editing = state.editing ? null : { text: '' }
+    }
   },
   actions: {
   },

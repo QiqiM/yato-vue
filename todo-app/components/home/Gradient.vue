@@ -10,14 +10,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import GradientColor from "../GradientColor";
+import { mapState } from 'vuex'
+import GradientColor from '../GradientColor'
 export default {
   components: {
     GradientColor
   },
-  computed:{
-      ...mapState(['todos','currentIndex'])
+  computed: {
+    ...mapState(['todos', 'currentIndex'])
   }
 }
 </script>

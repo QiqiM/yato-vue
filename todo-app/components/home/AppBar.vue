@@ -13,20 +13,20 @@
 <script>
 export default {
   props: {
-    title:{
-      type:String,
-      default:''
+    title: {
+      type: String,
+      default: ''
     },
-    left:{
-      type:String,
-      default:'chevron-left'
+    left: {
+      type: String,
+      default: 'chevron-left'
     },
-    right:{
-      type:String,
+    right: {
+      type: String,
       default: 'ellipsis-v'
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
