@@ -27,10 +27,10 @@ export default {
     let touch = {}
     this.$el.addEventListener('touchstart', evt => {
       touch.startX = evt.touches[0].clientX
-      touch.endx = 0
+      touch.endX = 0
     })
     this.$el.addEventListener('touchmove', evt => {
-      touch.endx = evt.touches[0].clientX
+      touch.endX = evt.touches[0].clientX
     })
     this.$el.addEventListener('touchend', () => {
       if (!touch.endX || Math.abs(touch.endX - touch.startX) < 10) {
@@ -73,7 +73,7 @@ export default {
     background-color: white;
   }
 }
-.todo-list_selected {
+.todo_list_selected {
   transform: scaleX(1.25);
 }
 </style>
