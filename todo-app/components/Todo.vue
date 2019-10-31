@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="todo_body">
-      <p class="todo_tips">{{ todo.tasks.length }} Task</p>
+      <p class="todo_tips">{{ taskCount }} Tasks</p>
       <h3 class="todo_title">{{ todo.name }}</h3>
       <div class="todo_progress">
         <span class="todo_progress_line">
@@ -17,7 +17,7 @@
         </span>
         <span class="todo_progress_num">{{ progress }}</span>
       </div>
-      <div class="todo_task">
+      <div class="todo_tasks">
         <h4 class="todo_subtitle" v-if="todayTasks.length">Today</h4>
         <ul>
           <li v-for="task in todayTasks" :key="task.id">
@@ -68,7 +68,10 @@ export default {
     progress () {
       const totalCount = this.todo.tasks.filter(t => !t.deleted).length
       const doneCount = this.todo.tasks.filter(t => !t.deleted && t.done).length
-      return `${Math.round((doneCount / totalCount) * 100)}%`
+      return totalCount === 0 ? `100%` : `${Math.round((doneCount / totalCount) * 100)}%`
+    },
+    taskCount () {
+      return this.todo.tasks.filter(t => !t.deleted).length
     },
     progressColor () {
       const colorLeft = `color-stop(30%, ${this.todo.colors[0]})`
