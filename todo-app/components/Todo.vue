@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Task from './Task.vue'
 import { today, tomorrow } from '../utils/util'
 
@@ -62,6 +63,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['taskCount']),
     color () {
       return this.todo.colors[0]
     },
@@ -70,9 +72,9 @@ export default {
       const doneCount = this.todo.tasks.filter(t => !t.deleted && t.done).length
       return totalCount === 0 ? `100%` : `${Math.round((doneCount / totalCount) * 100)}%`
     },
-    taskCount () {
-      return this.todo.tasks.filter(t => !t.deleted).length
-    },
+    // taskCount () {
+    //   return this.todo.tasks.filter(t => !t.deleted).length
+    // },
     progressColor () {
       const colorLeft = `color-stop(30%, ${this.todo.colors[0]})`
       const colorRight = `to(${this.todo.colors[1]})`

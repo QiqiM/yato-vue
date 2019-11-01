@@ -7,7 +7,7 @@
     <p class="avatar_tips">
       Looks like feed good.
       <br />
-      You have {{ todayTasks.length }} tasks to do
+      You have {{ taskCount }} tasks to do
       today.
     </p>
     <p class="avatar_date">TODAY : {{today | dateString}}</p>
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     ...mapState(['selected']),
-    ...mapGetters(['todayTasks'])
+    ...mapGetters(['todayTasks', 'taskCount'])
   },
   filters: {
     dateString (val) {

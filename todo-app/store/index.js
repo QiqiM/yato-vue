@@ -104,12 +104,16 @@ export default new Vuex.Store({
       let tasks = []
       state.todos.forEach(todo => {
         todo.tasks.forEach(task => {
-          if (task.date <= tomorrow && !task.done && task.deleted) {
+          if (task.date <= tomorrow && !task.done && !task.deleted) {
             tasks.push(task)
           }
         })
       })
       return tasks
+    },
+    taskCount (state) {
+      console.log(state.todos[state.currentIndex].tasks.filter(t => !t.deleted).length)
+      return state.todos[state.currentIndex].tasks.filter(t => !t.deleted).length
     }
   },
   mutations: {
