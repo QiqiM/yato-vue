@@ -6,6 +6,8 @@
     <gradient />
     <todo-list />
     <todo-detail />
+    <todo-editing />
+    <floating-button />
   </div>
 </template>
 
