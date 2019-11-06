@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .avatar {
   display: flex;
   padding: 0 40px ;

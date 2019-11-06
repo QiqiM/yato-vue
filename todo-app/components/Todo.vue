@@ -114,7 +114,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .todo {
   flex: 1;
   margin: 0 8px;

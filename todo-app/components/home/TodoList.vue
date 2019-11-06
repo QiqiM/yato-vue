@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .todo_list {
   padding: 0 32px;
   height: 400px;

@@ -77,7 +77,7 @@ export default {
   }
   .todo_head,
   .todo_body {
-    transform: translate3d(0, 88px, 0) !important;
+    transform: translate3d(0, 88px, 0);
   }
   .todo_menu {
     opacity: 0;
